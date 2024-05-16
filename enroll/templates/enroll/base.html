@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'enroll/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'enroll/css/all.min.css' %}">
+    {% block enrollcss %}
+        <link rel="stylesheet" href="{% static 'enroll/css/style1.css' %}">
+    {% endblock enrollcss %}
+</head>
+<body>
+
+  <div class="container-fluid bg-dark ">
+    {% include 'enroll/navbar.html'  %}
+  </div>
+
+  <div class="container ">
+    <div class="row ">
+        <div class="col-sm12">
+            {% block msg %}
+
+            {% endblock msg %}
+        </div>
+    </div>
+    <div class="row">
+        {% block side %}
+        {% endblock side %}
+
+        {% block content %}
+        {% endblock content %}
+    </div>
+  </div>
+
+
+ 
+   
+
+</body>
+    <script src="{% static 'enroll/js/jquary.js' %}"></script>
+    <script src="{% static 'enroll/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'enroll/js/popper.js' %}"></script>
+    <script src="{% static 'enroll/js/all.min.js' %}"></script>
+</html>

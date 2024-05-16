@@ -1,0 +1,22 @@
+{% extends "enroll/base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="col-sm-10 ">
+    {% if messages %}
+        {% for msg in messages %}
+            <h3 class="alert alert-success  mb-4  ">{{msg}}</h3>
+        {% endfor %}
+    {% endif %}
+    
+    <h3 class="mt-5">Dashboard/ Update Post</h3>
+
+    <form action="" method="post" class="mt-5" novalidate>
+        {% csrf_token %}
+        {{form.as_p}}
+        <input type="submit" value="Update" class="btn btn-success ">
+        <a href="{% url 'dashboard' %}" class="btn btn-danger ">Cancel</a>
+    </form>
+
+</div>
+{% endblock content %}
